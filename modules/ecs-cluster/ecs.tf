@@ -61,7 +61,7 @@ resource "aws_autoscaling_group" "cluster" {
   max_size             = "${var.ECS_MAXSIZE}"
   desired_capacity     = "${var.ECS_DESIRED_CAPACITY}"
 
-  tag {
+  tag = {
     key                 = "Name"
     value               = "${var.CLUSTER_NAME}-ecs"
     propagate_at_launch = true
